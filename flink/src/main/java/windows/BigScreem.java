@@ -28,6 +28,8 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
+ * @author zhangjun 欢迎关注我的公众号[大数据技术与应用实战],获取更多精彩实战内容
+ * <p>
  * 模拟实现电商实时大屏显示
  * 1.实时计算出当天零点截止到当前时间的销售总额
  * 2.计算出各个分类的销售top3
