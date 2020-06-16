@@ -38,6 +38,10 @@ import cep.monitor.events.TemperatureWarning;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author zhangjun 获取更多精彩实战内容，欢迎关注我的公众号[大数据技术与应用实战],分享各种大数据实战案例，
+ * 机架温度监控报警
+ */
 public class TemperatureMonitoring{
 	private static final double TEMPERATURE_THRESHOLD = 100;
 
