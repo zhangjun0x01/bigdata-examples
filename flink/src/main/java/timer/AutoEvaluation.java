@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -99,18 +98,15 @@ public class AutoEvaluation{
 	}
 
 	public static class MySource implements SourceFunction<Tuple2<String,Long>>{
-
 		private volatile boolean isRunning = true;
-		private Random random = new Random();
 
 		@Override
 		public void run(SourceContext<Tuple2<String,Long>> ctx) throws Exception{
 			while (isRunning){
 				Thread.sleep(1000);
 				//订单id
-
 				String orderid = UUID.randomUUID().toString();
-				//订单完成
+				//订单完成时间
 				long orderFinishTime = System.currentTimeMillis();
 				ctx.collect(Tuple2.of(orderid, orderFinishTime));
 			}
