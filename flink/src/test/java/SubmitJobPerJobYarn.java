@@ -62,7 +62,7 @@ public class SubmitJobPerJobYarn{
 //
 //
 //
-//		PackagedProgram prog = new PackagedProgram(GetGraph.class);
+//		PackagedProgram prog = buildProgram(InputParams options)
 //		client.run(prog,1);
 ////		CompletableFuture<JobSubmissionResult> future = client.submitJob(GetGraph.getJobGraph());
 //
@@ -90,6 +90,35 @@ public class SubmitJobPerJobYarn{
 //        System.out.println(jobResult);
 //	}
 
+
+
+	//    protected PackagedProgram buildProgram(InputParams options) {
+//        String[] programArgs = options.getProgramArgs();
+//        String jarFilePath = options.getJarFilePath();
+//        List<URL> classpaths = options.getClasspaths();
+//
+//        if (jarFilePath == null) {
+//            throw new IllegalArgumentException("The program JAR file was not specified.");
+//        }
+//
+//        File jarFile = new File(jarFilePath);
+//
+//        // Check if JAR file exists
+//        if (!jarFile.exists()) {
+//            throw new FileNotFoundException("JAR file does not exist: " + jarFile);
+//        } else if (!jarFile.isFile()) {
+//            throw new FileNotFoundException("JAR file is not a file: " + jarFile);
+//        }
+//
+//        // Get assembler class
+//        String entryPointClass = options.getEntryPointClass();
+//
+//        PackagedProgram program = entryPointClass == null ?
+//                new PackagedProgram(jarFile, classpaths, programArgs) :
+//                new PackagedProgram(jarFile, classpaths, entryPointClass, programArgs);
+//
+//        return null;
+//    }
 
 
 }
