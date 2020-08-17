@@ -27,6 +27,7 @@ under the License.
     <modules>
         <module>flink</module>
         <module>java</module>
+        <module>hive</module>
     </modules>
     <packaging>pom</packaging>
 
