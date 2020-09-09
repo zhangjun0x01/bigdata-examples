@@ -61,10 +61,9 @@ public class UdafTP{
 				int tp = acc.tp;
 				int responseTime = 0;
 				int p = 0;
+				Double d = sum * (tp / 100D);
 				for (Map.Entry<Integer,Integer> entry: map.entrySet()){
 					p += entry.getValue();
-
-					Double d = sum * (tp / 100D);
 					int position = d.intValue() - 1;
 					if (p >= position){
 						responseTime = entry.getKey();
