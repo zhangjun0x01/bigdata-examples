@@ -14,6 +14,7 @@ import org.apache.flink.table.types.logical.DoubleType;
 import org.apache.flink.table.types.logical.IntType;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.RowType;
+import org.apache.flink.table.types.logical.VarCharType;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.orc.TypeDescription;
@@ -38,8 +39,9 @@ public class StreamingWriteFileOrc{
 		writerProps.setProperty("orc.compress", "LZ4");
 
 		//定义类型和字段名
-		LogicalType[] orcTypes = new LogicalType[]{new IntType(), new DoubleType()};
-		String[] fields = new String[]{"a1", "b2"};
+		LogicalType[] orcTypes = new LogicalType[]{
+				new IntType(), new DoubleType(), new VarCharType()};
+		String[] fields = new String[]{"a1", "b2", "c3"};
 		TypeDescription typeDescription = OrcSplitReaderUtil.logicalTypeToOrcType(RowType.of(
 				orcTypes,
 				fields));
@@ -63,9 +65,10 @@ public class StreamingWriteFileOrc{
 		@Override
 		public void run(SourceContext<RowData> sourceContext) throws Exception{
 			while (true){
-				GenericRowData rowData = new GenericRowData(2);
+				GenericRowData rowData = new GenericRowData(3);
 				rowData.setField(0, (int) (Math.random() * 100));
 				rowData.setField(1, Math.random() * 100);
+				rowData.setField(2, org.apache.flink.table.data.StringData.fromString(String.valueOf(Math.random() * 100)));
 				sourceContext.collect(rowData);
 				Thread.sleep(10);
 			}
