@@ -24,6 +24,7 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 /**
  * @author zhangjun 欢迎关注我的公众号[大数据技术与应用实战],获取更多精彩实战内容
  * flink 流式数据写入iceberg
+ *
  */
 public class Flink2Iceberg{
 
