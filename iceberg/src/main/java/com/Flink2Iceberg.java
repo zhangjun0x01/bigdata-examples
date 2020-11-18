@@ -37,8 +37,9 @@ public class Flink2Iceberg{
 		tenv.executeSql("CREATE CATALOG iceberg WITH (\n" +
 		                "  'type'='iceberg',\n" +
 		                "  'catalog-type'='hive'," +
-		                //"  'hive-site-path'='hdfs://localhost/data/flink/conf/hive-site.xml'" +
-		                "  'hive-site-path'='/Users/user/work/hive/conf/hive-site.xml'" +
+		                "  'uri'='thrift://localhost:9083'," +
+		                "  'warehouse'='hdfs://localhost/user/hive2/warehouse'," +
+		                "  'hive-conf-dir'='/Users/user/work/hive/conf/hive-site.xml'" +
 		                ")");
 
 		tenv.useCatalog("iceberg");
