@@ -39,7 +39,7 @@ under the License.
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <log4j.version>2.12.1</log4j.version>
-        <iceberg.version>0.9.1</iceberg.version>
+        <iceberg.version>0.11.0</iceberg.version>
         <hadoop.version>2.8.3</hadoop.version>
     </properties>
 
@@ -82,8 +82,6 @@ under the License.
             <groupId>org.apache.iceberg</groupId>
             <artifactId>iceberg-flink-runtime</artifactId>
             <version>${iceberg.version}</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/iceberg-flink-runtime-0.9.1.jar</systemPath>
         </dependency>
 
 
